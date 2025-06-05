@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, flash
 from app import app
-from app.constants import HEADERS
+from constants import HEADERS
 from datetime import datetime
 import csv
 import os

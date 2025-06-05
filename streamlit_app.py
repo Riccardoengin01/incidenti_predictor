@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
-from app.constants import HEADERS
+from constants import HEADERS
 
 # Percorso file CSV
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "incidents.csv")
