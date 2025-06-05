@@ -35,7 +35,7 @@ python run.py
 ## Generazione del dataset e dei grafici
 
 Il file `data/incidents.csv` non è tracciato nel repository. È possibile
-crearlo in due modi:
+crearlo o copiarne uno già esistente in due modi:
 
 1. **Da terminale** con lo script interattivo:
 
@@ -47,6 +47,9 @@ crearlo in due modi:
 
 2. **Dall'applicazione web** accedendo alla pagina `/inserisci` dopo
    l'avvio di Flask.
+
+In alternativa, se disponi già di un file con la stessa struttura,
+copialo manualmente nella cartella `data/` con il nome `incidents.csv`.
 
 Una volta popolato il CSV, visitando la rotta `/dashboard` verranno creati i
 grafici statistici nella cartella `static/` (`grafico_gravita.png` e
