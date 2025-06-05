@@ -1,7 +1,7 @@
 import csv
 import os
 from datetime import datetime
-from app.constants import HEADERS
+from constants import HEADERS
 
 # Percorso del file CSV
 base_dir = os.path.dirname(os.path.abspath(__file__))
