@@ -41,8 +41,10 @@ crearlo o copiarne uno già esistente in due modi:
 
 1. **Da terminale** con lo script interattivo:
 
+   Per evitare errori di importazione esegui lo script come modulo:
+
    ```bash
-   python scripts/inserisci_incidenti.py
+   python -m scripts.inserisci_incidenti
    ```
 
    Le risposte inserite verranno salvate nel percorso `data/incidents.csv`.
