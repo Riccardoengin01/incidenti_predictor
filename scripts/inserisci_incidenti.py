@@ -1,17 +1,13 @@
 import csv
 import os
 from datetime import datetime
+from app.constants import HEADERS
 
 # Percorso del file CSV
 base_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(base_dir, "..", "data", "incidents.csv")
 file_path = os.path.normpath(file_path)
 
-# Intestazioni dei campi
-headers = [
-    "Data", "Ora", "Luogo", "Area", "Tipologia", "Gravità", "Descrizione",
-    "Impresa", "Mansione", "Fase_lavorativa", "Esito", "Azione_correttiva"
-]
 
 def chiedi_input():
     print("➕ INSERIMENTO NUOVO INCIDENTE\n")
@@ -36,7 +32,7 @@ def salva_incidente(incidente):
     file_esiste = os.path.exists(file_path)
 
     with open(file_path, mode='a', newline='', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, fieldnames=headers)
+        writer = csv.DictWriter(file, fieldnames=HEADERS)
 
         if not file_esiste:
             writer.writeheader()
