@@ -13,7 +13,11 @@ Progetto Python per registrare, analizzare e prevedere incidenti sul lavoro nei 
 - /output: report ed esportazioni
 
 ## Requisiti
-Vedi `requirements.txt`
+Le dipendenze principali sono elencate in `requirements.txt` e includono:
+
+- **Flask** (>=2.0) per l'applicazione web
+- **pandas** (>=1.3) per l'analisi dati
+- **matplotlib** (>=3.4) per i grafici
 
 Prima di avviare l'applicazione è necessario definire la variabile
 d'ambiente `SECRET_KEY` che verrà utilizzata da Flask per firmare i cookie
