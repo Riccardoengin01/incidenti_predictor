@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Inserisci Incidente</title></head>
+<body>
+    <h2>➕ Inserisci nuovo incidente</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post">
+        {% for h in headers %}
+            <label>{{ h }}:</label><br>
+            <input name="{{ h }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Salva</button>
+    </form>
+</body>
+</html>

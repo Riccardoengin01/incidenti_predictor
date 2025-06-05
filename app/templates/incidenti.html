@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Elenco Incidenti</title></head>
+<body>
+    <h2>📄 Elenco incidenti registrati</h2>
+    <a href="/">🔙 Torna alla home</a><br><br>
+    {% if dati %}
+    <table border="1">
+        <tr>
+        {% for colonna in intestazioni %}
+            <th>{{ colonna }}</th>
+        {% endfor %}
+        </tr>
+        {% for riga in dati %}
+        <tr>
+            {% for valore in riga %}
+                <td>{{ valore }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Nessun incidente registrato.</p>
+    {% endif %}
+</body>
+</html>

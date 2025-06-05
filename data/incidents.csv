@@ -1,0 +1,51 @@
+Data,Ora,Luogo,Area,Tipologia,Gravità,Descrizione,Impresa,Mansione,Fase_lavorativa,Esito,Azione_correttiva
+2025-05-05,16:45,Area esterna edificio A,Interno,Elettrico,Bassa,Caduta da scala,Ditta C,Saldatore,Sollevamento,Near Miss,Formazione ripetuta
+2025-05-07,10:30,Area esterna edificio A,Esterno,Caduta,Alta,Scivolamento su liquido,Ditta B,Addetto pulizie,Carico/scarico,Altro,Barriera fisica installata
+2025-05-04,15:30,Cantiere EUI,Esterno,Caduta,Media,Folgorazione,Ditta A,Muratore,Sollevamento,Near Miss,Barriera fisica installata
+2025-05-05,12:45,Palazzo Buontalenti,Esterno,Urto,Mortale,Folgorazione,Ditta A,Elettricista,Sollevamento,Near Miss,Cartellonistica rafforzata
+2025-05-09,15:15,Palazzo Buontalenti,Esterno,Caduta,Media,Urto contro oggetto,Ditta C,Addetto pulizie,Sollevamento,Infortunio,Uso DPI obbligatorio
+2025-05-24,12:15,Uffici interrati,Esterno,Scivolamento,Alta,Scivolamento su liquido,Ditta A,Saldatore,Carico/scarico,Infortunio,Barriera fisica installata
+2025-05-04,16:15,Uffici interrati,Interno,Caduta oggetti,Mortale,Urto contro oggetto,Ditta A,Saldatore,Sollevamento,Altro,Barriera fisica installata
+2025-05-13,9:45,Uffici interrati,Interno,Taglio,Bassa,Caduta da scala,Ditta B,Addetto pulizie,Manutenzione,Infortunio,Formazione ripetuta
+2025-05-11,14:15,Area esterna edificio A,Interno,Scivolamento,Bassa,Scivolamento su liquido,Ditta C,Addetto pulizie,Demolizione,Infortunio,Formazione ripetuta
+2025-05-16,18:30,Palazzo Buontalenti,Esterno,Caduta,Alta,Folgorazione,Ditta C,Muratore,Manutenzione,Infortunio,Formazione ripetuta
+2025-05-16,7:15,Palazzo Buontalenti,Interno,Caduta oggetti,Media,Oggetto caduto dall'alto,Ditta A,Saldatore,Sollevamento,Near Miss,Uso DPI obbligatorio
+2025-05-03,11:00,Palazzo Buontalenti,Esterno,Caduta,Media,Ferita con attrezzo,Ditta A,Carrellista,Carico/scarico,Altro,Cartellonistica rafforzata
+2025-05-09,12:00,Magazzino C,Interno,Taglio,Media,Oggetto caduto dall'alto,Ditta C,Muratore,Demolizione,Infortunio,Cartellonistica rafforzata
+2025-05-23,14:00,Cantiere EUI,Interno,Caduta oggetti,Media,Ferita con attrezzo,Ditta B,Elettricista,Pulizia,Near Miss,Cartellonistica rafforzata
+2025-05-04,16:00,Uffici interrati,Interno,Scivolamento,Media,Urto contro oggetto,Ditta D,Saldatore,Carico/scarico,Altro,Formazione ripetuta
+2025-05-05,10:45,Cantiere EUI,Interno,Urto,Bassa,Oggetto caduto dall'alto,Ditta A,Carrellista,Sollevamento,Near Miss,Formazione ripetuta
+2025-05-11,10:30,Cantiere EUI,Interno,Taglio,Alta,Oggetto caduto dall'alto,Ditta C,Addetto pulizie,Pulizia,Altro,Uso DPI obbligatorio
+2025-05-21,12:30,Palazzo Buontalenti,Esterno,Taglio,Media,Folgorazione,Ditta A,Muratore,Demolizione,Altro,Controllo supervisore
+2025-05-27,11:15,Area esterna edificio A,Interno,Scivolamento,Mortale,Caduta da scala,Ditta B,Elettricista,Carico/scarico,Infortunio,Barriera fisica installata
+2025-05-15,18:15,Area esterna edificio A,Interno,Scivolamento,Alta,Urto contro oggetto,Ditta D,Muratore,Manutenzione,Near Miss,Controllo supervisore
+2025-05-11,13:30,Uffici interrati,Esterno,Elettrico,Mortale,Caduta da scala,Ditta B,Elettricista,Demolizione,Near Miss,Uso DPI obbligatorio
+2025-05-24,10:45,Palazzo Buontalenti,Interno,Scivolamento,Mortale,Ferita con attrezzo,Ditta B,Carrellista,Demolizione,Altro,Controllo supervisore
+2025-05-09,16:30,Cantiere EUI,Interno,Scivolamento,Alta,Ferita con attrezzo,Ditta B,Addetto pulizie,Demolizione,Altro,Cartellonistica rafforzata
+2025-05-18,8:00,Uffici interrati,Esterno,Scivolamento,Bassa,Oggetto caduto dall'alto,Ditta C,Addetto pulizie,Manutenzione,Near Miss,Cartellonistica rafforzata
+2025-05-23,7:00,Cantiere EUI,Esterno,Caduta oggetti,Alta,Oggetto caduto dall'alto,Ditta C,Saldatore,Carico/scarico,Near Miss,Controllo supervisore
+2025-05-26,15:00,Cantiere EUI,Interno,Caduta,Mortale,Oggetto caduto dall'alto,Ditta D,Carrellista,Demolizione,Near Miss,Formazione ripetuta
+2025-05-09,8:00,Magazzino C,Esterno,Caduta,Alta,Oggetto caduto dall'alto,Ditta B,Addetto pulizie,Sollevamento,Infortunio,Formazione ripetuta
+2025-05-20,17:45,Cantiere EUI,Esterno,Elettrico,Alta,Caduta da scala,Ditta D,Elettricista,Manutenzione,Altro,Cartellonistica rafforzata
+2025-05-23,8:30,Palazzo Buontalenti,Interno,Caduta,Alta,Urto contro oggetto,Ditta D,Addetto pulizie,Sollevamento,Near Miss,Controllo supervisore
+2025-05-05,9:00,Palazzo Buontalenti,Interno,Taglio,Mortale,Urto contro oggetto,Ditta B,Carrellista,Manutenzione,Infortunio,Uso DPI obbligatorio
+2025-05-28,12:00,Uffici interrati,Esterno,Caduta,Bassa,Urto contro oggetto,Ditta A,Saldatore,Manutenzione,Infortunio,Cartellonistica rafforzata
+2025-05-21,15:30,Area esterna edificio A,Interno,Urto,Mortale,Scivolamento su liquido,Ditta D,Addetto pulizie,Carico/scarico,Altro,Formazione ripetuta
+2025-05-24,13:15,Area esterna edificio A,Interno,Urto,Mortale,Ferita con attrezzo,Ditta A,Addetto pulizie,Sollevamento,Altro,Cartellonistica rafforzata
+2025-05-08,11:15,Area esterna edificio A,Interno,Caduta oggetti,Mortale,Folgorazione,Ditta A,Carrellista,Pulizia,Near Miss,Barriera fisica installata
+2025-05-02,8:45,Palazzo Buontalenti,Esterno,Caduta oggetti,Mortale,Folgorazione,Ditta B,Elettricista,Manutenzione,Infortunio,Uso DPI obbligatorio
+2025-05-16,8:45,Uffici interrati,Interno,Caduta oggetti,Alta,Folgorazione,Ditta A,Saldatore,Pulizia,Near Miss,Controllo supervisore
+2025-05-26,14:00,Palazzo Buontalenti,Interno,Urto,Alta,Ferita con attrezzo,Ditta B,Carrellista,Carico/scarico,Altro,Formazione ripetuta
+2025-05-18,15:15,Area esterna edificio A,Esterno,Caduta oggetti,Bassa,Urto contro oggetto,Ditta D,Carrellista,Manutenzione,Infortunio,Cartellonistica rafforzata
+2025-05-30,9:30,Area esterna edificio A,Esterno,Scivolamento,Mortale,Ferita con attrezzo,Ditta A,Elettricista,Demolizione,Near Miss,Cartellonistica rafforzata
+2025-05-04,10:00,Magazzino C,Esterno,Caduta,Bassa,Ferita con attrezzo,Ditta B,Elettricista,Carico/scarico,Near Miss,Cartellonistica rafforzata
+2025-05-04,13:00,Cantiere EUI,Interno,Caduta,Bassa,Urto contro oggetto,Ditta B,Elettricista,Demolizione,Altro,Cartellonistica rafforzata
+2025-05-12,8:45,Cantiere EUI,Interno,Taglio,Bassa,Oggetto caduto dall'alto,Ditta A,Carrellista,Demolizione,Near Miss,Controllo supervisore
+2025-05-28,11:45,Palazzo Buontalenti,Interno,Urto,Media,Urto contro oggetto,Ditta C,Addetto pulizie,Demolizione,Near Miss,Formazione ripetuta
+2025-05-14,13:15,Palazzo Buontalenti,Esterno,Caduta,Bassa,Folgorazione,Ditta A,Saldatore,Demolizione,Altro,Barriera fisica installata
+2025-05-10,8:15,Cantiere EUI,Interno,Urto,Alta,Folgorazione,Ditta C,Elettricista,Sollevamento,Near Miss,Uso DPI obbligatorio
+2025-05-12,7:15,Magazzino C,Esterno,Urto,Alta,Ferita con attrezzo,Ditta A,Carrellista,Sollevamento,Altro,Uso DPI obbligatorio
+2025-05-04,17:45,Palazzo Buontalenti,Esterno,Elettrico,Bassa,Urto contro oggetto,Ditta C,Addetto pulizie,Manutenzione,Near Miss,Barriera fisica installata
+2025-05-16,10:45,Cantiere EUI,Interno,Caduta oggetti,Bassa,Oggetto caduto dall'alto,Ditta A,Carrellista,Sollevamento,Altro,Controllo supervisore
+2025-05-25,17:45,Magazzino C,Esterno,Caduta,Media,Caduta da scala,Ditta A,Carrellista,Manutenzione,Near Miss,Uso DPI obbligatorio
+2025-05-26,11:45,Area esterna edificio A,Interno,Urto,Media,Scivolamento su liquido,Ditta D,Elettricista,Manutenzione,Near Miss,Formazione ripetuta
