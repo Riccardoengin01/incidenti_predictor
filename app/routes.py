@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, flash
 from app import app
 from app.constants import HEADERS
+from datetime import datetime
 import csv
 import os
 import pandas as pd
@@ -8,6 +9,24 @@ import matplotlib.pyplot as plt
 
 # Percorso CSV
 CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "incidents.csv"))
+
+
+def validate_incidente(data: dict) -> tuple[bool, str]:
+    """Validate incident dict. Returns (valid, error_message)."""
+    # All fields must be present
+    if not all(data.get(h) for h in HEADERS):
+        return False, "Compila tutti i campi"
+    # Validate date
+    try:
+        datetime.strptime(data["Data"], "%Y-%m-%d")
+    except ValueError:
+        return False, "Data non valida (YYYY-MM-DD)"
+    # Validate time
+    try:
+        datetime.strptime(data["Ora"], "%H:%M")
+    except ValueError:
+        return False, "Ora non valida (HH:MM)"
+    return True, ""
 
 # ROUTE PRINCIPALE
 @app.route("/")
@@ -18,12 +37,17 @@ def index():
 @app.route("/inserisci", methods=["GET", "POST"])
 def inserisci():
     if request.method == "POST":
-        incidente = [request.form.get(h) for h in HEADERS]
+        incidente = {h: request.form.get(h, "").strip() for h in HEADERS}
+        valid, msg = validate_incidente(incidente)
+        if not valid:
+            flash(f"Errore: {msg}")
+            return render_template("form.html", headers=HEADERS), 400
+
         file_esiste = os.path.exists(CSV_PATH)
         with open(CSV_PATH, "a", newline="", encoding="utf-8") as file:
-            writer = csv.writer(file)
+            writer = csv.DictWriter(file, fieldnames=HEADERS)
             if not file_esiste:
-                writer.writerow(HEADERS)
+                writer.writeheader()
             writer.writerow(incidente)
         flash("✅ Incidente salvato con successo!")
         return redirect("/inserisci")
