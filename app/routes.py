@@ -83,4 +83,17 @@ def dashboard():
     plt.close(fig2)
     print(f"✅ Grafico 2 salvato in: {grav_path}")
 
+    # Grafico Anno
+    df['Data'] = pd.to_datetime(df['Data'], errors='coerce')
+    fig3 = plt.figure()
+    df['Data'].dt.year.value_counts().sort_index().plot(kind='bar')
+    plt.title("Incidenti per Anno")
+    plt.ylabel("Numero")
+    plt.xticks(rotation=45)
+    fig3.tight_layout()
+    year_path = os.path.join(static_path, "grafico_anno.png")
+    fig3.savefig(year_path)
+    plt.close(fig3)
+    print(f"✅ Grafico 3 salvato in: {year_path}")
+
     return render_template("dashboard.html")
