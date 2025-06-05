@@ -9,3 +9,5 @@ __pycache__/
 .DS_Store
 *.log
 *.zip
+data/incidents.csv
+static/grafico_*.png

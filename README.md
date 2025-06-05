@@ -29,3 +29,24 @@ Esempio:
 export SECRET_KEY="valore-sicuro"
 python run.py
 ```
+
+## Generazione del dataset e dei grafici
+
+Il file `data/incidents.csv` non è tracciato nel repository. È possibile
+crearlo in due modi:
+
+1. **Da terminale** con lo script interattivo:
+
+   ```bash
+   python scripts/inserisci_incidenti.py
+   ```
+
+   Le risposte inserite verranno salvate nel percorso `data/incidents.csv`.
+
+2. **Dall'applicazione web** accedendo alla pagina `/inserisci` dopo
+   l'avvio di Flask.
+
+Una volta popolato il CSV, visitando la rotta `/dashboard` verranno creati i
+grafici statistici nella cartella `static/` (`grafico_gravita.png` e
+`grafico_tipologia.png`). Anche questi file sono esclusi dal controllo di
+versione.
