@@ -50,8 +50,8 @@ def dashboard():
     import matplotlib.pyplot as plt
 
     # Percorsi
-    csv_path = os.path.join(os.getcwd(), "data", "incidents.csv")
-    static_path = os.path.join(os.getcwd(), "static")
+    csv_path = CSV_PATH
+    static_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "static"))
 
     print("📂 CSV path:", csv_path)
     print("📂 Static path:", static_path)
