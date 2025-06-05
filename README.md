@@ -34,6 +34,9 @@ export SECRET_KEY="valore-sicuro"
 python run.py
 ```
 
+Se avvii solo la dashboard Streamlit (`streamlit_app.py`) questa variabile non è
+necessaria.
+
 ## Generazione del dataset e dei grafici
 
 Il file `data/incidents.csv` non è tracciato nel repository. È possibile
