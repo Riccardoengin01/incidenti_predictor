@@ -14,3 +14,14 @@ Progetto Python per registrare, analizzare e prevedere incidenti sul lavoro nei 
 
 ## Requisiti
 Vedi `requirements.txt`
+
+Prima di avviare l'applicazione è necessario definire la variabile
+d'ambiente `SECRET_KEY` che verrà utilizzata da Flask per firmare i cookie
+di sessione.
+
+Esempio:
+
+```bash
+export SECRET_KEY="valore-sicuro"
+python run.py
+```
