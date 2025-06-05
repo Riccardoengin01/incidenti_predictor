@@ -68,3 +68,12 @@ streamlit run streamlit_app.py
 Questo comando aprirà l'applicazione nel browser predefinito, permettendo di
 consultare gli incidenti registrati, inserirne di nuovi e visualizzare alcune
 statistiche di base.
+
+## Test
+Per eseguire la suite di test è necessario aver installato le dipendenze del progetto. Una volta installate, lancia:
+
+```bash
+pytest
+```
+
+I test verificano la corretta scrittura e lettura del file CSV utilizzato dagli script.
