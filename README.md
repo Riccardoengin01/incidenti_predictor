@@ -6,6 +6,7 @@ Progetto Python per registrare, analizzare e prevedere incidenti sul lavoro nei 
 - Inserimento incidenti CLI (CSV)
 - Dashboard in sviluppo
 - Analisi predittiva pianificata
+- Interfaccia Streamlit
 
 ## Struttura
 - /data: dati CSV
@@ -18,6 +19,7 @@ Le dipendenze principali sono elencate in `requirements.txt` e includono:
 - **Flask** (>=2.0) per l'applicazione web
 - **pandas** (>=1.3) per l'analisi dati
 - **matplotlib** (>=3.4) per i grafici
+- **streamlit** (>=1.0) per l'interfaccia web alternativa
 
 Prima di avviare l'applicazione è necessario definire la variabile
 d'ambiente `SECRET_KEY` che verrà utilizzata da Flask per firmare i cookie
@@ -50,3 +52,16 @@ Una volta popolato il CSV, visitando la rotta `/dashboard` verranno creati i
 grafici statistici nella cartella `static/` (`grafico_gravita.png` e
 `grafico_tipologia.png`). Anche questi file sono esclusi dal controllo di
 versione.
+
+## Interfaccia Streamlit
+
+In alternativa al server Flask, è possibile avviare una piccola dashboard
+interattiva con Streamlit:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Questo comando aprirà l'applicazione nel browser predefinito, permettendo di
+consultare gli incidenti registrati, inserirne di nuovi e visualizzare alcune
+statistiche di base.
