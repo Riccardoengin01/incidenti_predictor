@@ -17,13 +17,15 @@ Progetto Python per registrare, analizzare e prevedere incidenti sul lavoro nei 
 Le dipendenze principali sono elencate in `requirements.txt` e includono:
 
 - **Flask** (>=2.0) per l'applicazione web
+- **Flask-WTF** (>=1.0) per la protezione CSRF
 - **pandas** (>=1.3) per l'analisi dati
 - **matplotlib** (>=3.4) per i grafici
 - **streamlit** (>=1.0) per l'interfaccia web alternativa
 
-Prima di avviare l'applicazione è necessario definire la variabile
-d'ambiente `SECRET_KEY` che verrà utilizzata da Flask per firmare i cookie
-di sessione.
+Prima di avviare l'applicazione **devi** impostare la variabile
+d'ambiente `SECRET_KEY`. Senza di essa l'applicazione Flask non si avvierà,
+poiché la chiave viene usata per firmare i cookie di sessione e abilitare la
+protezione CSRF.
 
 Esempio:
 

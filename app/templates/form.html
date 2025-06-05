@@ -13,6 +13,7 @@
       {% endif %}
     {% endwith %}
     <form method="post">
+        {{ csrf_token() }}
         {% for h in headers %}
             <label>{{ h }}:</label><br>
             <input name="{{ h }}" required><br><br>
