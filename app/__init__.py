@@ -1,5 +1,6 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
-app.secret_key = "chiave-segreta"
+app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 from app import routes
