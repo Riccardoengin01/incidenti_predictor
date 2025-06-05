@@ -37,3 +37,19 @@ plt.ylabel("Numero di incidenti")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+# --- Analisi per anno ---
+df['Data'] = pd.to_datetime(df['Data'], errors='coerce')
+by_year = df['Data'].dt.year.value_counts().sort_index()
+
+print("\n📈 Incidenti per anno:")
+print(by_year)
+
+plt.figure(figsize=(8, 5))
+by_year.plot(kind='bar')
+plt.title("Incidenti per Anno")
+plt.xlabel("Anno")
+plt.ylabel("Numero di incidenti")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()

@@ -56,3 +56,10 @@ else:  # Statistiche
         df['Gravità'].value_counts().plot(kind='pie', autopct='%1.1f%%')
         plt.tight_layout()
         st.pyplot(fig2)
+
+        st.subheader("Incidenti per Anno")
+        df['Data'] = pd.to_datetime(df['Data'], errors='coerce')
+        fig3 = plt.figure()
+        df['Data'].dt.year.value_counts().sort_index().plot(kind='bar')
+        plt.tight_layout()
+        st.pyplot(fig3)
