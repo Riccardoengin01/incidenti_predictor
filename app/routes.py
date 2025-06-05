@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, flash
 from app import app
+from app.constants import HEADERS
 import csv
 import os
 import pandas as pd
@@ -7,10 +8,6 @@ import matplotlib.pyplot as plt
 
 # Percorso CSV
 CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "incidents.csv"))
-
-# Intestazioni dei campi
-headers = ["Data", "Ora", "Luogo", "Area", "Tipologia", "Gravità", "Descrizione",
-           "Impresa", "Mansione", "Fase_lavorativa", "Esito", "Azione_correttiva"]
 
 # ROUTE PRINCIPALE
 @app.route("/")
@@ -21,16 +18,16 @@ def index():
 @app.route("/inserisci", methods=["GET", "POST"])
 def inserisci():
     if request.method == "POST":
-        incidente = [request.form.get(h) for h in headers]
+        incidente = [request.form.get(h) for h in HEADERS]
         file_esiste = os.path.exists(CSV_PATH)
         with open(CSV_PATH, "a", newline="", encoding="utf-8") as file:
             writer = csv.writer(file)
             if not file_esiste:
-                writer.writerow(headers)
+                writer.writerow(HEADERS)
             writer.writerow(incidente)
         flash("✅ Incidente salvato con successo!")
         return redirect("/inserisci")
-    return render_template("form.html", headers=headers)
+    return render_template("form.html", headers=HEADERS)
 
 # TABELLA INCIDENTI
 @app.route("/incidenti")
