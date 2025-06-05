@@ -2,6 +2,9 @@ import csv
 import os
 from datetime import datetime
 from constants import HEADERS
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Percorso del file CSV
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -10,7 +13,7 @@ file_path = os.path.normpath(file_path)
 
 
 def chiedi_input():
-    print("➕ INSERIMENTO NUOVO INCIDENTE\n")
+    logger.info("➕ INSERIMENTO NUOVO INCIDENTE")
 
     incidente = {
         "Data": input("Data (YYYY-MM-DD): "),
@@ -39,7 +42,7 @@ def salva_incidente(incidente):
 
         writer.writerow(incidente)
 
-    print("\n✅ Incidente salvato correttamente.")
+    logger.info("✅ Incidente salvato correttamente.")
 
 if __name__ == "__main__":
     incidente = chiedi_input()

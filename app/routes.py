@@ -6,6 +6,9 @@ import csv
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Percorso CSV
 CSV_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "incidents.csv"))
@@ -74,8 +77,8 @@ def dashboard():
     csv_path = CSV_PATH
     static_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "static"))
 
-    print("📂 CSV path:", csv_path)
-    print("📂 Static path:", static_path)
+    logger.info("📂 CSV path: %s", csv_path)
+    logger.info("📂 Static path: %s", static_path)
 
     if not os.path.exists(csv_path):
         return "File CSV non trovato."
@@ -95,7 +98,7 @@ def dashboard():
     tip_path = os.path.join(static_path, "grafico_tipologia.png")
     fig1.savefig(tip_path)
     plt.close(fig1)
-    print(f"✅ Grafico 1 salvato in: {tip_path}")
+    logger.info("✅ Grafico 1 salvato in: %s", tip_path)
 
     # Grafico Gravità
     fig2 = plt.figure()
@@ -105,7 +108,7 @@ def dashboard():
     grav_path = os.path.join(static_path, "grafico_gravita.png")
     fig2.savefig(grav_path)
     plt.close(fig2)
-    print(f"✅ Grafico 2 salvato in: {grav_path}")
+    logger.info("✅ Grafico 2 salvato in: %s", grav_path)
 
     # Grafico Anno
     df['Data'] = pd.to_datetime(df['Data'], errors='coerce')
@@ -118,6 +121,6 @@ def dashboard():
     year_path = os.path.join(static_path, "grafico_anno.png")
     fig3.savefig(year_path)
     plt.close(fig3)
-    print(f"✅ Grafico 3 salvato in: {year_path}")
+    logger.info("✅ Grafico 3 salvato in: %s", year_path)
 
     return render_template("dashboard.html")
