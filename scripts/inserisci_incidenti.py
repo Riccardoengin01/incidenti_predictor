@@ -1,15 +1,10 @@
-import csv
-import os
-from datetime import datetime
 from constants import HEADERS
+from database import SessionLocal, Incident
 import logging
 
 logger = logging.getLogger(__name__)
 
-# Percorso del file CSV
-base_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(base_dir, "..", "data", "incidents.csv")
-file_path = os.path.normpath(file_path)
+# Dati salvati in SQLite
 
 
 def chiedi_input():
@@ -31,17 +26,12 @@ def chiedi_input():
     }
     return incidente
 
-def salva_incidente(incidente):
-    file_esiste = os.path.exists(file_path)
-
-    with open(file_path, mode='a', newline='', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, fieldnames=HEADERS)
-
-        if not file_esiste:
-            writer.writeheader()
-
-        writer.writerow(incidente)
-
+def salva_incidente(incidente: dict):
+    """Persist incident into SQLite database"""
+    with SessionLocal() as session:
+        record = Incident(**incidente)
+        session.add(record)
+        session.commit()
     logger.info("✅ Incidente salvato correttamente.")
 
 if __name__ == "__main__":

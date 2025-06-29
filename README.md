@@ -3,13 +3,13 @@
 Progetto Python per registrare, analizzare e prevedere incidenti sul lavoro nei contesti Safety, Health & Security.
 
 ## Moduli attivi
-- Inserimento incidenti CLI (CSV)
+- Inserimento incidenti CLI
 - Dashboard in sviluppo
 - Analisi predittiva pianificata
 - Interfaccia Streamlit
 
 ## Struttura
-- /data: dati CSV
+- /data: database SQLite e altri dati
 - /scripts: script Python
 - /output: report ed esportazioni
 
@@ -37,29 +37,14 @@ python run.py
 Se avvii solo la dashboard Streamlit (`streamlit_app.py`) questa variabile non è
 necessaria.
 
-## Generazione del dataset e dei grafici
+## Database e grafici
 
-Il file `data/incidents.csv` non è tracciato nel repository. È possibile
-crearlo o copiarne uno già esistente in due modi:
+Gli incidenti vengono ora salvati nel database SQLite `data/incidents.sqlite3`.
+Il file viene creato automaticamente al primo inserimento dati, sia tramite CLI
+che tramite interfaccia web.
 
-1. **Da terminale** con lo script interattivo:
-
-   Per evitare errori di importazione esegui lo script come modulo:
-
-   ```bash
-   python -m scripts.inserisci_incidenti
-   ```
-
-   Le risposte inserite verranno salvate nel percorso `data/incidents.csv`.
-
-2. **Dall'applicazione web** accedendo alla pagina `/inserisci` dopo
-   l'avvio di Flask.
-
-In alternativa, se disponi già di un file con la stessa struttura,
-copialo manualmente nella cartella `data/` con il nome `incidents.csv`.
-
-Una volta popolato il CSV, visitando la rotta `/dashboard` verranno creati i
-grafici statistici nella cartella `static/` (`grafico_gravita.png` e
+Una volta popolato il database, visitando la rotta `/dashboard` verranno creati
+i grafici statistici nella cartella `static/` (`grafico_gravita.png` e
 `grafico_tipologia.png`). Anche questi file sono esclusi dal controllo di
 versione.
 
@@ -83,4 +68,4 @@ Per eseguire la suite di test è necessario aver installato le dipendenze del pr
 pytest
 ```
 
-I test verificano la corretta scrittura e lettura del file CSV utilizzato dagli script.
+I test verificano la corretta scrittura e lettura del database SQLite utilizzato dagli script.
