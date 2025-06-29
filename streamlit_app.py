@@ -1,27 +1,33 @@
 import os
-import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 from constants import HEADERS
+from database import SessionLocal, Incident
 
-# Percorso file CSV
+# Percorso file CSV (non più utilizzato)
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "incidents.csv")
 
 
 def load_data():
-    if os.path.exists(CSV_PATH):
-        return pd.read_csv(CSV_PATH)
+    """Load incidents from the SQLite database"""
+    with SessionLocal() as session:
+        incidents = session.query(Incident).all()
+        rows = [
+            {h: getattr(inc, h) for h in HEADERS}
+            for inc in incidents
+        ]
+    if rows:
+        return pd.DataFrame(rows, columns=HEADERS)
     return pd.DataFrame(columns=HEADERS)
 
 
-def append_incident(data):
-    file_exists = os.path.exists(CSV_PATH)
-    with open(CSV_PATH, "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=HEADERS)
-        if not file_exists:
-            writer.writeheader()
-        writer.writerow(data)
+def append_incident(data: dict):
+    """Insert a new incident into the SQLite database"""
+    with SessionLocal() as session:
+        incident = Incident(**data)
+        session.add(incident)
+        session.commit()
 
 
 st.title("HSE Incidenti - Streamlit")
